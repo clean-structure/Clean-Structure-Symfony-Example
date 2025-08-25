@@ -13,7 +13,6 @@ services:
       - path: .env
     volumes:
       - ./:/var/www
-      - ./docker/phpstorm-coverage:/opt/phpstorm-coverage
     ports:
       - "8085:80"
     logging:

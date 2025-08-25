@@ -5,6 +5,7 @@ use ShipMonk\ComposerDependencyAnalyser\Config\ErrorType;
 
 return new Configuration()
     ->addPathsToScan(['config'], false)
+    ->addPathToExclude('tests/CodeSniffer/Sniffs/Commenting/FunctionCommentSniff.php')
     ->ignoreErrorsOnPackages(
         [
             'symfony/console',

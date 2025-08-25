@@ -122,6 +122,6 @@
     <!--после = значение на той же строке-->
     <rule ref="PEAR.Formatting.MultiLineAssignment"/>
 
-    <rule ref="./resources/CodeSniffer"/>
+    <rule ref="./tests/CodeSniffer"/>
 
 </ruleset>

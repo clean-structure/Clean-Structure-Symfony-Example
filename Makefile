@@ -17,7 +17,7 @@ help:
 	$(TAB) make test-php - Run PHP tests
 
 install:
-	${DOCKER_COMPOSE} build --no-cache
+	${DOCKER_COMPOSE} build
 	${DOCKER_COMPOSE} up -d
 	[ -f .env ] || cp .env.example .env
 	${DOCKER_COMPOSE} exec php composer install
@@ -31,7 +31,7 @@ down:
 update:
 	${DOCKER_COMPOSE} down
 	git pull
-	${DOCKER_COMPOSE} build --no-cache
+	${DOCKER_COMPOSE} build
 	${DOCKER_COMPOSE} up -d
 	${DOCKER_COMPOSE} exec php composer install
 

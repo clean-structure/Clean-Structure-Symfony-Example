@@ -48,6 +48,7 @@ COPY --from=unit_builder /usr/sbin/unitd /usr/sbin/unitd
 COPY --from=unit_builder /usr/lib/unit/ /usr/lib/unit/
 COPY --from=composer /usr/bin/composer /usr/bin/
 
+# Context from project root
 COPY --chmod=544 docker/php/entrypoint.sh /entrypoint.sh
 COPY docker/php/unit-config.json /config.json
 
@@ -87,6 +88,7 @@ RUN usermod -aG sudo www-data && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sud
 RUN mv "${PHP_INI_DIR}/php.ini-development" "${PHP_INI_DIR}/php.ini"
 RUN echo "opentelemetry.attr_hooks_enabled = On" >> "${PHP_INI_DIR}/php.ini"
 RUN mkdir -p /var/www/backend/public && echo "<?php phpinfo();" > /var/www/backend/public/index.php
+RUN mkdir -p "/opt/phpstorm-coverage" && chmod a+rw "/opt/phpstorm-coverage"
 
 USER www-data
 
