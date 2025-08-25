@@ -7,7 +7,7 @@
          failOnDeprecation="true"
          failOnNotice="true"
          failOnWarning="true"
-         bootstrap="tests/bootstrap.php"
+         bootstrap="tests/ModuleSuite/bootstrap.php"
          cacheDirectory="var/cache/.phpunit.cache"
 >
     <php>
@@ -18,8 +18,8 @@
     </php>
 
     <testsuites>
-        <testsuite name="Project Test Suite">
-            <directory>tests/Suite</directory>
+        <testsuite name="Module Test Suite">
+            <directory>tests/ModuleSuite</directory>
         </testsuite>
     </testsuites>
 

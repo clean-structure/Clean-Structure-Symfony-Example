@@ -8,9 +8,11 @@
         "ext-zend-opcache": "*",
         "nelmio/api-doc-bundle": "^5.5",
         "symfony/console": "^7.3.2",
+        "symfony/dependency-injection": "~7.3.2",
         "symfony/dotenv": "^7.3.2",
         "symfony/flex": "^2.8.2",
         "symfony/framework-bundle": "^7.3.2",
+        "symfony/http-foundation": "~7.3.2",
         "symfony/http-kernel": "^7.3.2",
         "symfony/routing": "^7.3.2",
         "symfony/runtime": "^7.3.1",
@@ -26,7 +28,8 @@
         "rector/rector": "^2.1.4",
         "roave/security-advisories": "dev-latest",
         "shipmonk/composer-dependency-analyser": "^1.8.3",
-        "squizlabs/php_codesniffer": "^3.13.2"
+        "squizlabs/php_codesniffer": "^3.13.2",
+        "symfony/browser-kit": "~7.3.2"
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
@@ -45,12 +48,12 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Lk2\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Lk2\\Tests\\": "tests/"
         }
     },
     "config": {

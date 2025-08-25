@@ -9,7 +9,6 @@ return new Configuration()
         [
             'symfony/console',
             'symfony/flex',
-            'symfony/routing',
             'symfony/runtime',
             'symfony/yaml',
         ],

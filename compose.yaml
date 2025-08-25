@@ -1,6 +1,6 @@
 services:
   php:
-    image: clean-structure/yii3-demo:0.1
+    image: clean-structure/symfony:0.2
     restart: unless-stopped
     build:
       context: .
@@ -15,7 +15,7 @@ services:
       - ./:/var/www
       - ./docker/phpstorm-coverage:/opt/phpstorm-coverage
     ports:
-      - "8084:80"
+      - "8085:80"
     logging:
       options:
         max-file: 1

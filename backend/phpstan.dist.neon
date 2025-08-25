@@ -7,3 +7,12 @@ parameters:
         - src/
         - tests/
     tmpDir: var/cache/phpstan
+services:
+   -
+       class: Lk2\Tests\Architecture\CleanStructureTest
+       tags:
+           - phpat.test
+   -
+       class: Lk2\Tests\Architecture\CleanArchitectureTest
+       tags:
+           - phpat.test
