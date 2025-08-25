@@ -8,6 +8,7 @@ return new Configuration()
     ->addPathToExclude('tests/CodeSniffer/Sniffs/Commenting/FunctionCommentSniff.php')
     ->ignoreErrorsOnPackages(
         [
+            'symfony/asset',
             'symfony/console',
             'symfony/flex',
             'symfony/runtime',
