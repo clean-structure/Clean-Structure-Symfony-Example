@@ -1,0 +1,110 @@
+{
+    "name": "clean-structure/clean-structure-symfony-example-api",
+    "description": "Clean Structure: Example API by Symfony",
+    "license": "proprietary",
+    "type": "project",
+    "require": {
+        "php": ">=8.4",
+        "ext-zend-opcache": "*",
+        "nelmio/api-doc-bundle": "^5.5",
+        "symfony/console": "^7.3.2",
+        "symfony/dotenv": "^7.3.2",
+        "symfony/flex": "^2.8.2",
+        "symfony/framework-bundle": "^7.3.2",
+        "symfony/http-kernel": "^7.3.2",
+        "symfony/routing": "^7.3.2",
+        "symfony/runtime": "^7.3.1",
+        "symfony/yaml": "^7.3.2"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.47",
+        "phpat/phpat": "^0.11.9",
+        "phpstan/extension-installer": "^1.4.3",
+        "phpstan/phpstan-phpunit": "^2.0.7",
+        "phpstan/phpstan-strict-rules": "^2.0.6",
+        "phpunit/phpunit": "^12.3.6",
+        "rector/rector": "^2.1.4",
+        "roave/security-advisories": "dev-latest",
+        "shipmonk/composer-dependency-analyser": "^1.8.3",
+        "squizlabs/php_codesniffer": "^3.13.2"
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php81": "*",
+        "symfony/polyfill-php82": "*"
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "bump-after-update": true,
+        "cache-dir": "./var/cache/composer",
+        "sort-packages": true
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "7.3.*"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ],
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "fix": [
+            "composer normalize --diff",
+            "composer bump",
+            "vendor/bin/phpcbf",
+            "vendor/bin/rector process"
+        ],
+        "phpcs": "vendor/bin/phpcs",
+        "phpstan": "vendor/bin/phpstan --memory-limit=-1",
+        "phpunit": "php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-text",
+        "rector": "vendor/bin/rector process --dry-run",
+        "test": [
+            "composer normalize --diff --dry-run",
+            "composer bump --dry-run",
+            "composer validate",
+            "composer phpcs",
+            "composer rector",
+            "composer phpstan",
+            "vendor/bin/composer-dependency-analyser",
+            "composer outdated --strict --major-only --sort-by-age",
+            "bin/console cache:clear",
+            "bin/console lint:container",
+            "bin/console nelmio:apidoc:dump > /dev/null",
+            "composer phpunit"
+        ]
+    }
+}
