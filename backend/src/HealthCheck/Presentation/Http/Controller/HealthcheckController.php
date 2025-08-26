@@ -32,8 +32,8 @@ final readonly class HealthcheckController
     {
         try {
             $dbHealthUseCase->check();
-        } catch (Throwable $healthCheckException) {
-            return new JsonResponse(new HealthCheckErrors($healthCheckException->getMessage()));
+        } catch (Throwable $exception) {
+            return new JsonResponse(new HealthCheckErrors($exception->getMessage()));
         }
 
         return new Response('ok');

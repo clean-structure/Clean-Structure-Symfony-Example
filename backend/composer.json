@@ -116,10 +116,10 @@
             "composer phpstan",
             "vendor/bin/composer-dependency-analyser",
             "composer outdated --strict --major-only --sort-by-age --ignore=doctrine/dbal",
-            "bin/console cache:clear",
-            "bin/console lint:container",
-            "bin/console nelmio:apidoc:dump --area=default > /dev/null",
-            "bin/console nelmio:apidoc:dump --area=internal > /dev/null",
+            "php bin/console cache:clear",
+            "php bin/console lint:container",
+            "php bin/console nelmio:apidoc:dump --area=default > /dev/null",
+            "php bin/console nelmio:apidoc:dump --area=internal > /dev/null",
             "composer phpunit"
         ]
     }
