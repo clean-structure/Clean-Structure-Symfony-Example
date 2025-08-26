@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector;
 use Rector\Config\RectorConfig;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
 use Rector\Set\ValueObject\SetList;
@@ -30,5 +31,6 @@ return RectorConfig::configure()
         SymfonySetList::SYMFONY_74,
     ])
     ->withSkip([
-        RemoveUselessParamTagRector::class
+        RemoveUselessParamTagRector::class,
+        CatchExceptionNameMatchingTypeRector::class
     ]);
