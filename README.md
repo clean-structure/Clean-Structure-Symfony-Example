@@ -15,6 +15,7 @@ make install
 ```
 
 Check follow links after build and start docker:
+- http://localhost:8085/welcome
 - http://localhost:8085/ping
 - http://localhost:8085/healthcheck
 - http://localhost:8085/api/doc/internal

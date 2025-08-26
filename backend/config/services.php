@@ -12,6 +12,7 @@ return static function (ContainerConfigurator $configurator): void {
         ->autoconfigure();
 
     $configurator->import(resource: __DIR__ . '/../src/**/Presentation/Config/di.php');
+    $configurator->import(resource: __DIR__ . '/../src/**/Presentation/Config/twig.yaml');
 
     if ($configurator->env() !== null) {
         $configurator->import(resource: __DIR__ . "/../src/**/Presentation/Config/di_{$configurator->env()}.php");

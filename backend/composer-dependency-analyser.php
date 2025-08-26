@@ -23,4 +23,8 @@ return new Configuration()
     ->ignoreErrorsOnPackage(
         'symfony/dotenv',
         [ErrorType::PROD_DEPENDENCY_ONLY_IN_DEV]
+    )
+    ->ignoreErrorsOnPackage(
+        'symfony/web-profiler-bundle',
+        [ErrorType::DEV_DEPENDENCY_IN_PROD]
     );
