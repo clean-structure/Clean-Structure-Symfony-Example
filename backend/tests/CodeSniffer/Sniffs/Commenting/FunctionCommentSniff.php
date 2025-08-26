@@ -220,6 +220,10 @@ class FunctionCommentSniff implements Sniff
         $maxType = 0;
         $maxVar = 0;
         foreach ($tokens[$commentStart]['comment_tags'] as $pos => $tag) {
+            if (strtolower((string) $tokens[$tag]['content']) === '@inheritdoc') {
+                break;
+            }
+
             if ($tokens[$tag]['content'] !== '@param') {
                 continue;
             }

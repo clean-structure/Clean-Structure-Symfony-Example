@@ -6,6 +6,7 @@ use ShipMonk\ComposerDependencyAnalyser\Config\ErrorType;
 return new Configuration()
     ->addPathsToScan(['config'], false)
     ->addPathToExclude('tests/CodeSniffer/Sniffs/Commenting/FunctionCommentSniff.php')
+    ->addPathToExclude('config/packages/monolog.php')
     ->ignoreErrorsOnPackages(
         [
             'symfony/asset',
@@ -13,6 +14,9 @@ return new Configuration()
             'symfony/flex',
             'symfony/runtime',
             'symfony/yaml',
+            'doctrine/dbal',
+            'symfony/config',
+            'symfony/property-access',
         ],
         [ErrorType::UNUSED_DEPENDENCY]
     )

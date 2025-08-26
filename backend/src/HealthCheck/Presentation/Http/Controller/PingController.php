@@ -18,7 +18,7 @@ final readonly class PingController
         content: new OA\MediaType(mediaType: 'text/html', schema: new OA\Schema(type:'string'), example: 'pong')
     )]
     #[Areas(['internal'])]
-    public function number(): Response
+    public function ping(): Response
     {
         return new Response('pong');
     }

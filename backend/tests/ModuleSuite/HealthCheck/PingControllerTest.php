@@ -8,6 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 final class PingControllerTest extends WebTestCase
 {
+    /**
+     * Проверим доступность
+     *
+     * @see PingController::ping
+     */
     public function testPing(): void
     {
         $client = self::createClient();

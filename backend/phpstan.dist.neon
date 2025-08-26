@@ -8,7 +8,8 @@ parameters:
         - tests/
     tmpDir: var/cache/phpstan
     excludePaths:
-        - 'tests/CodeSniffer/Sniffs/Commenting/FunctionCommentSniff.php'
+        - tests/CodeSniffer/Sniffs/Commenting/FunctionCommentSniff.php
+        - config/packages/monolog.php
 services:
    -
        class: CleanStructure\Tests\Architecture\CleanStructureTest
