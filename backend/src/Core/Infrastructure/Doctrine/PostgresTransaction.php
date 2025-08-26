@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CleanStructure\Core\Infrastructure\Illuminate;
+namespace CleanStructure\Core\Infrastructure\Doctrine;
 
 use CleanStructure\Core\Domain\TransactionInterface;
 use Doctrine\ORM\EntityManagerInterface;

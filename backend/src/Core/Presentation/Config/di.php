@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use CleanStructure\Core\Domain\NormalizeInterface;
 use CleanStructure\Core\Domain\TransactionInterface;
-use CleanStructure\Core\Infrastructure\Illuminate\PostgresTransaction;
+use CleanStructure\Core\Infrastructure\Doctrine\PostgresTransaction;
 use CleanStructure\Core\Infrastructure\Symfony\SerializerDecorator;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
