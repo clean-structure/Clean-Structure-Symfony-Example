@@ -2,7 +2,7 @@
 [![Tests](https://github.com/vendelev/Clean-Architecture-Laravel-Demo-Structure/actions/workflows/tests.yml/badge.svg)](https://github.com/clean-structure/clean-structure-symfony-example-api/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/clean-structure/clean-structure-symfony-example-api/blob/main/LICENSE)
 
-This project was created to demonstrate [the universal structure of a PHP project](https://github.com/clean-structure/Clean-Architecture-Laravel-Demo-Structure ) based on the principles of Clean Architecture, Clean Code and modular monolith.
+This project was created to demonstrate [the universal structure of a PHP project](https://vendelev.github.io/Clean-Architecture-Laravel-Demo-Structure/clean-structure/) based on the principles of Clean Architecture, Clean Code and modular monolith.
 
 **Clone project:**:
 ```shell
