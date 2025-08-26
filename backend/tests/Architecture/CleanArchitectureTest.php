@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lk2\Tests\Architecture;
+namespace CleanStructure\Tests\Architecture;
 
 use PHPat\Selector\Selector;
 use PHPat\Test\Builder\Rule;

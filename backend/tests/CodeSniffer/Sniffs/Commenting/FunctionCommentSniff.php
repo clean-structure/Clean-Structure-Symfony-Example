@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lk2\Tests\CodeSniffer\Sniffs\Commenting;
+namespace CleanStructure\Tests\CodeSniffer\Sniffs\Commenting;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;

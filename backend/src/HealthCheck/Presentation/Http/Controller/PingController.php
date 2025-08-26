@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lk2\HealthCheck\Presentation\Http\Controller;
+namespace CleanStructure\HealthCheck\Presentation\Http\Controller;
 
 use Nelmio\ApiDocBundle\Attribute\Areas;
 use Symfony\Component\HttpFoundation\Response;

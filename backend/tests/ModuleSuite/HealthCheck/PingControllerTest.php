@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lk2\Tests\ModuleSuite\HealthCheck;
+namespace CleanStructure\Tests\ModuleSuite\HealthCheck;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

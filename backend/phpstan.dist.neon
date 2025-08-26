@@ -11,10 +11,10 @@ parameters:
         - 'tests/CodeSniffer/Sniffs/Commenting/FunctionCommentSniff.php'
 services:
    -
-       class: Lk2\Tests\Architecture\CleanStructureTest
+       class: CleanStructure\Tests\Architecture\CleanStructureTest
        tags:
            - phpat.test
    -
-       class: Lk2\Tests\Architecture\CleanArchitectureTest
+       class: CleanStructure\Tests\Architecture\CleanArchitectureTest
        tags:
            - phpat.test
