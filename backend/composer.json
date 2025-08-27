@@ -34,6 +34,7 @@
         "zircote/swagger-php": "^5.3.2"
     },
     "require-dev": {
+        "dama/doctrine-test-bundle": "^8.3.1",
         "ergebnis/composer-normalize": "^2.47",
         "phpat/phpat": "^0.11.9",
         "phpstan/extension-installer": "^1.4.3",
