@@ -16,15 +16,19 @@ return new Configuration()
             'doctrine/dbal',
             'symfony/config',
             'symfony/property-access',
-            'ramsey/uuid-doctrine'
+            'ramsey/uuid-doctrine',
         ],
         [ErrorType::UNUSED_DEPENDENCY]
     )
-    ->ignoreErrorsOnPackage(
-        'symfony/dotenv',
+    ->ignoreErrorsOnPackages([
+            'symfony/dotenv',
+            'symfony/filesystem',
+        ],
         [ErrorType::PROD_DEPENDENCY_ONLY_IN_DEV]
     )
-    ->ignoreErrorsOnPackage(
-        'symfony/web-profiler-bundle',
+    ->ignoreErrorsOnPackages([
+            'symfony/web-profiler-bundle',
+            'dama/doctrine-test-bundle',
+        ],
         [ErrorType::DEV_DEPENDENCY_IN_PROD]
     );
