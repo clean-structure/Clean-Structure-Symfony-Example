@@ -20,7 +20,7 @@ final class CreateUserCommandTest extends KernelTestCase
 
         $command = $application->find('app:create-user');
         $commandTester = new CommandTester($command);
-        $commandTester->execute(['username' => microtime()]);
+        $commandTester->execute(['username' => 'Test Name']);
 
         $commandTester->assertCommandIsSuccessful();
 
