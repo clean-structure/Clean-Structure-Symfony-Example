@@ -45,7 +45,7 @@ final readonly class CheckDbWriter
      */
     public function updateValue(string $newValue, string $oldValue): int
     {
-        return $this->entityManager->getConnection()->executeQuery(
+        return (int)$this->entityManager->getConnection()->executeQuery(
             'UPDATE health_check SET dummy_column = :newValue where dummy_column = :oldValue',
             [
                 'newValue' => $newValue,
@@ -59,7 +59,7 @@ final readonly class CheckDbWriter
      */
     public function deleteValue(string $value): int
     {
-        return $this->entityManager->getConnection()->executeQuery(
+        return (int)$this->entityManager->getConnection()->executeQuery(
             'DELETE FROM health_check WHERE dummy_column = :value',
             ['value' => $value]
         )->rowCount();
