@@ -121,7 +121,7 @@
             "composer rector",
             "composer phpstan",
             "php vendor/bin/composer-dependency-analyser",
-            "composer outdated --strict --major-only --sort-by-age",
+            "composer outdated --strict --sort-by-age",
             "php bin/console cache:clear",
             "php bin/console lint:container",
             "php bin/console lint:twig --format=github",
