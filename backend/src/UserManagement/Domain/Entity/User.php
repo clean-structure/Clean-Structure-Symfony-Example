@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\UuidInterface;
 
 #[ORM\Entity()]
-final class User
+class User
 {
     public function __construct(
         #[ORM\Id]
