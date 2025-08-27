@@ -11,11 +11,14 @@
         "doctrine/doctrine-migrations-bundle": "^3.4.2",
         "doctrine/orm": "^3.5.2",
         "nelmio/api-doc-bundle": "^5.5",
+        "ramsey/uuid": "^4.9",
+        "ramsey/uuid-doctrine": "^2.1",
         "symfony/asset": "^7.3.0",
         "symfony/config": "^7.3.2",
         "symfony/console": "^7.3.2",
         "symfony/dependency-injection": "^7.3.2",
         "symfony/dotenv": "^7.3.2",
+        "symfony/event-dispatcher": "^7.3",
         "symfony/flex": "^2.8.2",
         "symfony/framework-bundle": "^7.3.2",
         "symfony/http-foundation": "^7.3.2",
@@ -99,16 +102,17 @@
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
+        "db-migrate": "php bin/console doctrine:migrations:migrate --no-interaction",
         "fix": [
             "composer normalize --diff",
             "composer bump",
-            "vendor/bin/phpcbf",
-            "vendor/bin/rector process"
+            "php vendor/bin/phpcbf",
+            "php vendor/bin/rector process"
         ],
-        "phpcs": "vendor/bin/phpcs",
-        "phpstan": "vendor/bin/phpstan --memory-limit=-1",
+        "phpcs": "php vendor/bin/phpcs",
+        "phpstan": "php vendor/bin/phpstan --memory-limit=-1",
         "phpunit": "php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-text",
-        "rector": "vendor/bin/rector process --dry-run",
+        "rector": "php vendor/bin/rector process --dry-run",
         "test": [
             "composer normalize --diff --dry-run",
             "composer bump --dry-run",
@@ -116,13 +120,16 @@
             "composer phpcs",
             "composer rector",
             "composer phpstan",
-            "vendor/bin/composer-dependency-analyser",
+            "php vendor/bin/composer-dependency-analyser",
             "composer outdated --strict --major-only --sort-by-age",
             "php bin/console cache:clear",
             "php bin/console lint:container",
             "php bin/console lint:twig --format=github",
+            "php bin/console lint:yaml . --format=github",
             "php bin/console nelmio:apidoc:dump --area=default > /dev/null",
             "php bin/console nelmio:apidoc:dump --area=internal > /dev/null",
+            "php bin/console doctrine:migrations:migrate --env=test --no-interaction",
+            "php bin/console doctrine:schema:validate",
             "composer phpunit"
         ]
     }

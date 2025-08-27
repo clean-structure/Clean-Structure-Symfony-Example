@@ -10,13 +10,13 @@ return new Configuration()
     ->ignoreErrorsOnPackages(
         [
             'symfony/asset',
-            'symfony/console',
             'symfony/flex',
             'symfony/runtime',
             'symfony/yaml',
             'doctrine/dbal',
             'symfony/config',
             'symfony/property-access',
+            'ramsey/uuid-doctrine'
         ],
         [ErrorType::UNUSED_DEPENDENCY]
     )

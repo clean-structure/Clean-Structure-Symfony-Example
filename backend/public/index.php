@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use CleanStructure\Core\Infrastructure\Kernel;
+use CleanStructure\Core\Infrastructure\Symfony\Kernel;
 
 require_once dirname(__DIR__) . '/vendor/autoload_runtime.php';
 

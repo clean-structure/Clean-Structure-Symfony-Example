@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class WelcomeController extends AbstractController
 {
-    #[Route('/welcome', methods: ['GET'])]
+    #[Route('/', methods: ['GET'])]
     public function page(): Response
     {
         return $this->render('@WelcomePage/welcome_page.html.twig');

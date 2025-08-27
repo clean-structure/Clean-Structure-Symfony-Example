@@ -18,7 +18,7 @@ final class WelcomeControllerTest extends WebTestCase
     {
         $client = self::createClient();
 
-        $client->request('GET', '/welcome');
+        $client->request('GET', '/');
 
         self::assertResponseIsSuccessful();
         self::assertSelectorTextContains('h1', 'Welcome to Symfony');

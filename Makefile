@@ -21,6 +21,7 @@ install:
 	${DOCKER_COMPOSE} up -d
 	[ -f .env ] || cp .env.example .env
 	${DOCKER_COMPOSE} exec php composer install
+	${DOCKER_COMPOSE} exec php composer db-migrate
 
 up:
 	${DOCKER_COMPOSE} up -d
@@ -31,9 +32,7 @@ down:
 update:
 	${DOCKER_COMPOSE} down
 	git pull
-	${DOCKER_COMPOSE} build
-	${DOCKER_COMPOSE} up -d
-	${DOCKER_COMPOSE} exec php composer install
+	make install
 
 test-php:
 	${DOCKER_COMPOSE} exec php composer fix
