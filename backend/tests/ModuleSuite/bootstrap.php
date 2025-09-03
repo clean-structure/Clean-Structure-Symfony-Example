@@ -13,6 +13,7 @@ if (method_exists(Dotenv::class, 'bootEnv')) { // @phpstan-ignore-line
 
 new Filesystem()->remove([__DIR__ . '/../../var/cache/test']);
 
+// phpcs:ignore
 if ($_SERVER['APP_DEBUG']) { // @phpstan-ignore-line
     umask(0000);
 }

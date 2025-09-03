@@ -45,6 +45,7 @@
         "rector/rector": "^2.1.4",
         "roave/security-advisories": "dev-latest",
         "shipmonk/composer-dependency-analyser": "^1.8.3",
+        "slevomat/coding-standard": "^8.20",
         "squizlabs/php_codesniffer": "^3.13.2",
         "symfony/browser-kit": "^7.3.2",
         "symfony/css-selector": "^7.3",
@@ -77,6 +78,7 @@
     },
     "config": {
         "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "ergebnis/composer-normalize": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
