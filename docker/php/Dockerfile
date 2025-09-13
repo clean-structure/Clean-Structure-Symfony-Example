@@ -11,6 +11,8 @@ FROM mlocati/php-extension-installer:2.9.5 AS php-extension-installer
 #####
 FROM php:${PHP_VERSION} AS unit_builder
 
+ARG UNIT_VERSION
+
 RUN <<EOF bash
   set -e
   apt-get update
@@ -28,6 +30,7 @@ EOF
 #####
 FROM php:${PHP_VERSION} AS php-base
 
+ARG LOCALTIME
 COPY --from=php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 RUN <<EOF bash
@@ -36,6 +39,7 @@ RUN <<EOF bash
   apt-get install -y zip unzip tzdata
   rm /etc/localtime
   ln -s /usr/share/zoneinfo/${LOCALTIME} /etc/localtime
+  echo ${LOCALTIME} > /etc/timezone
   install-php-extensions ldap redis amqp-2.1.2 pgsql pdo_pgsql gd bcmath iconv ctype sockets zip soap intl pcntl curl opcache opentelemetry
   apt-get remove -q -y ${PHPIZE_DEPS} ${BUILD_DEPENDS}
   apt-get clean autoclean
@@ -68,6 +72,8 @@ ARG UID=1000
 ARG GID=1000
 ENV UID=${UID}
 ENV GID=${GID}
+ARG XDEBUG_VERSION
+ARG LOCALTIME
 
 RUN <<EOF bash
   groupmod --gid=${GID} www-data
@@ -87,6 +93,7 @@ EOF
 RUN usermod -aG sudo www-data && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN mv "${PHP_INI_DIR}/php.ini-development" "${PHP_INI_DIR}/php.ini"
 RUN echo "opentelemetry.attr_hooks_enabled = On" >> "${PHP_INI_DIR}/php.ini"
+RUN echo "date.timezone = ${LOCALTIME}" >> "${PHP_INI_DIR}/php.ini"
 RUN mkdir -p /var/www/backend/public && echo "<?php phpinfo();" > /var/www/backend/public/index.php
 RUN mkdir -p "/opt/phpstorm-coverage" && chmod a+rw "/opt/phpstorm-coverage"
 
