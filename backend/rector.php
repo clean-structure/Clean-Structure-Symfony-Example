@@ -16,10 +16,10 @@ return RectorConfig::configure()
         __DIR__ . '/tests',
     ])
     ->withParallel()
-    ->withCache(__DIR__ . '/var/cache/rector')
+    ->withCache(cacheDirectory: __DIR__ . '/var/cache/rector')
     ->withPhpSets(php84: true)
     ->withPhpVersion(PhpVersion::PHP_84)
-    ->withComposerBased(false, true, true, true)
+    ->withComposerBased(doctrine: true, phpunit: true, symfony: true)
     ->withSets([
         SetList::DEAD_CODE,
         SetList::PRIVATIZATION,
